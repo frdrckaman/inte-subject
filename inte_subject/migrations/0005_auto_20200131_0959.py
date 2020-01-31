@@ -8,46 +8,47 @@ import edc_visit_tracking.managers
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('inte_lists', '0001_initial'),
-        ('sites', '0002_alter_domain_unique'),
-        ('inte_subject', '0004_auto_20200131_0953'),
+        ("inte_lists", "0001_initial"),
+        ("sites", "0002_alter_domain_unique"),
+        ("inte_subject", "0004_auto_20200131_0953"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='GeneralAssessmentInitial',
-            new_name='GeneralAssessment',
+            old_name="GeneralAssessmentInitial", new_name="GeneralAssessment",
         ),
-        migrations.DeleteModel(
-            name='GeneralAssessment',
-        ),
+        migrations.DeleteModel(name="GeneralAssessment",),
         migrations.CreateModel(
-            name='GeneralAssessmentInitial',
-            fields=[
-            ],
+            name="GeneralAssessmentInitial",
+            fields=[],
             options={
-                'verbose_name': 'General Assessment (Baseline)',
-                'verbose_name_plural': 'General Assessment (Baseline)',
-                'proxy': True,
-                'indexes': [],
-                'constraints': [],
+                "verbose_name": "General Assessment (Baseline)",
+                "verbose_name_plural": "General Assessment (Baseline)",
+                "proxy": True,
+                "indexes": [],
+                "constraints": [],
             },
-            bases=('inte_subject.generalassessment',),
+            bases=("inte_subject.generalassessment",),
             managers=[
-                ('on_site', django.contrib.sites.managers.CurrentSiteManager()),
-                ('objects', edc_visit_tracking.managers.CrfModelManager()),
+                ("on_site", django.contrib.sites.managers.CurrentSiteManager()),
+                ("objects", edc_visit_tracking.managers.CrfModelManager()),
             ],
         ),
         migrations.AlterModelOptions(
-            name='generalassessment',
-            options={'verbose_name': 'General Assessment', 'verbose_name_plural': 'General Assessment'},
+            name="generalassessment",
+            options={
+                "verbose_name": "General Assessment",
+                "verbose_name_plural": "General Assessment",
+            },
         ),
         migrations.RemoveIndex(
-            model_name='generalassessment',
-            name='inte_subjec_subject_c7b4f0_idx',
+            model_name="generalassessment", name="inte_subjec_subject_c7b4f0_idx",
         ),
         migrations.AddIndex(
-            model_name='generalassessment',
-            index=models.Index(fields=['subject_visit', 'site', 'id'], name='inte_subjec_subject_bee46d_idx'),
+            model_name="generalassessment",
+            index=models.Index(
+                fields=["subject_visit", "site", "id"],
+                name="inte_subjec_subject_bee46d_idx",
+            ),
         ),
     ]

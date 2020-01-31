@@ -11,7 +11,9 @@ from ..modeladmin import CrfModelAdminMixin
 
 
 @admin.register(RiskFactors, site=inte_subject_admin)
-class RiskFactorsAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin):
+class RiskFactorsAdmin(
+    CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin
+):
 
     form = RiskFactorsForm
 
@@ -29,13 +31,7 @@ class RiskFactorsAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHisto
         ),
         (
             "Alcohol",
-            {
-                "fields": (
-                    "alcohol",
-                    "alcohol_consumption",
-                    "alcohol_preference",
-                ),
-            },
+            {"fields": ("alcohol", "alcohol_consumption", "alcohol_preference",),},
         ),
         audit_fieldset_tuple,
     )

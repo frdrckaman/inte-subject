@@ -12,7 +12,9 @@ from ..modeladmin import CrfModelAdminMixin
 
 
 @admin.register(HypertensionInitialReview, site=inte_subject_admin)
-class HypertensionInitialReviewAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin):
+class HypertensionInitialReviewAdmin(
+    CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin
+):
 
     form = HypertensionInitialReviewForm
 

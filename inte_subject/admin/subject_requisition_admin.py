@@ -51,6 +51,5 @@ class SubjectRequisitionAdmin(RequisitionAdminMixin, CrfModelAdmin):
             except (TypeError, IndexError):
                 pass
             else:
-                queryset = queryset.filter(
-                    subject_visit=subject_visit, is_drawn=YES)
+                queryset = queryset.filter(subject_visit=subject_visit, is_drawn=YES)
         return queryset, use_distinct

@@ -21,7 +21,9 @@ from ..modeladmin import CrfModelAdminMixin
 
 
 @admin.register(PhysicalActivity, site=inte_subject_admin)
-class PhysicalActivityAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin):
+class PhysicalActivityAdmin(
+    CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin
+):
 
     form = PhysicalActivityForm
 
@@ -36,9 +38,7 @@ class PhysicalActivityAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, Simple
                     "(Please tick one box that is closest to your present work "
                     "from the following five possibilities)"
                 ),
-                "fields": (
-                    "physical_activity",
-                ),
+                "fields": ("physical_activity",),
             },
         ),
         (

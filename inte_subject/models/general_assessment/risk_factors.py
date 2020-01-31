@@ -3,7 +3,9 @@ from edc_constants.choices import YES_NO
 from edc_model.models import BaseUuidModel
 
 from ...choices import (
-    CIGARETTES_PER_DAY, ALCOHOL_CONSUMPTION, ALCOHOL_PREFERENCES,
+    CIGARETTES_PER_DAY,
+    ALCOHOL_CONSUMPTION,
+    ALCOHOL_PREFERENCES,
 )
 from ..crf_model_mixin import CrfModelMixin
 
@@ -11,9 +13,7 @@ from ..crf_model_mixin import CrfModelMixin
 class RiskFactors(CrfModelMixin, BaseUuidModel):
 
     smoker_current = models.CharField(
-        verbose_name="Does the patient smoke currently?",
-        max_length=15,
-        choices=YES_NO,
+        verbose_name="Does the patient smoke currently?", max_length=15, choices=YES_NO,
     )
 
     smoker_last_12m = models.CharField(
@@ -29,9 +29,7 @@ class RiskFactors(CrfModelMixin, BaseUuidModel):
     )
 
     alcohol = models.CharField(
-        verbose_name="Does the patient drink alcohol?",
-        max_length=15,
-        choices=YES_NO,
+        verbose_name="Does the patient drink alcohol?", max_length=15, choices=YES_NO,
     )
 
     alcohol_consumption = models.CharField(

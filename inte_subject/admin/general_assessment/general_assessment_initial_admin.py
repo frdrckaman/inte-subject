@@ -12,30 +12,15 @@ from ..modeladmin import CrfModelAdminMixin
 
 @admin.register(GeneralAssessmentInitial, site=inte_subject_admin)
 class GeneralAssessmentInitialAdmin(
-        CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin):
+    CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin
+):
 
     form = GeneralAssessmentInitialForm
 
     fieldsets = (
         (None, {"fields": ("subject_visit", "report_datetime")}),
-        (
-            "Diagnoses at screening",
-            {
-                "fields": (
-                    "conditions",
-                ),
-            },
-        ),
-        (
-            "HIV",
-            {
-                "fields": (
-                    "hiv_screen",
-                    "hiv_informed",
-                    "hiv_screen_date",
-                ),
-            },
-        ),
+        ("Diagnoses at screening", {"fields": ("conditions",),},),
+        ("HIV", {"fields": ("hiv_screen", "hiv_informed", "hiv_screen_date",),},),
         (
             "Diabetes",
             {
