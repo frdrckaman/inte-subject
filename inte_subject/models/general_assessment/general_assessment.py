@@ -9,8 +9,7 @@ from ..crf_model_mixin import CrfModelMixin
 class GeneralAssessment(CrfModelMixin, BaseUuidModel):
 
     conditions = models.ManyToManyField(
-        Conditions,
-        verbose_name="On what basis was the patient enrolled?",
+        Conditions, verbose_name="On what basis was the patient enrolled?",
     )
 
     hiv_screen = models.CharField(
@@ -41,7 +40,8 @@ class GeneralAssessment(CrfModelMixin, BaseUuidModel):
     diabetes_screen = models.CharField(
         verbose_name=(
             "Besides the tests done today, have you been tested "
-            "for diabetes (high blood sugar)"),
+            "for diabetes (high blood sugar)"
+        ),
         choices=YES_NO,
         max_length=15,
         null=True,
@@ -66,8 +66,10 @@ class GeneralAssessment(CrfModelMixin, BaseUuidModel):
     )
 
     hypertension_screen = models.CharField(
-        verbose_name=("Besides the tests done today, have you been "
-                      "tested for high blood pressure?"),
+        verbose_name=(
+            "Besides the tests done today, have you been "
+            "tested for high blood pressure?"
+        ),
         choices=YES_NO,
         max_length=15,
         null=True,
@@ -90,7 +92,8 @@ class GeneralAssessment(CrfModelMixin, BaseUuidModel):
         blank=True,
         help_text=(
             "Hypertension. If estimated, see protocol for instructions "
-            "on how to estimate dates"),
+            "on how to estimate dates"
+        ),
     )
 
     class Meta(CrfModelMixin.Meta):

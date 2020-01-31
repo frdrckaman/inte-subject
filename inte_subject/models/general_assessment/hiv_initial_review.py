@@ -25,8 +25,7 @@ class HivInitialReview(ReviewModelMixin, CrfModelMixin, BaseUuidModel):
     )
 
     art_initiation_date_estimated = edc_models.IsDateEstimatedFieldNa(
-        verbose_name="Is the ART initiation date estimated",
-        default=NOT_APPLICABLE,
+        verbose_name="Is the ART initiation date estimated", default=NOT_APPLICABLE,
     )
 
     treatment = models.ManyToManyField(

@@ -15,8 +15,7 @@ class TreatmentDetailModelMixin(BaseUuidModel):
 
     dose = models.IntegerField()
 
-    units = models.CharField(
-        max_length=15)
+    units = models.CharField(max_length=15)
 
     frequency = models.IntegerField(
         verbose_name="Frequency",
@@ -24,13 +23,9 @@ class TreatmentDetailModelMixin(BaseUuidModel):
         help_text="per day",
     )
 
-    prescribed = models.CharField(
-        max_length=15,
-        choices=YES_NO)
+    prescribed = models.CharField(max_length=15, choices=YES_NO)
 
-    dispensed = models.CharField(
-        max_length=15,
-        choices=DISPENSE_CHOICES)
+    dispensed = models.CharField(max_length=15, choices=DISPENSE_CHOICES)
 
     quantity = models.IntegerField()
 

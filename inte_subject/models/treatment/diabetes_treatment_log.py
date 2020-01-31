@@ -7,7 +7,6 @@ from .treatment_model_mixin import TreatmentDetailModelMixin
 
 
 class DiabetesTreatmentLog(CrfModelMixin, BaseUuidModel):
-
     class Meta(CrfModelMixin.Meta):
         verbose_name = "Diabetes Treatment Log"
         verbose_name_plural = "Diabetes Treatment Log"
@@ -15,10 +14,7 @@ class DiabetesTreatmentLog(CrfModelMixin, BaseUuidModel):
 
 class DiabetesTreatmentDetail(TreatmentDetailModelMixin, BaseUuidModel):
 
-    treatment = models.ManyToManyField(
-        DiabetesTreatment,
-        verbose_name="Medicine",
-    )
+    treatment = models.ManyToManyField(DiabetesTreatment, verbose_name="Medicine",)
 
     class Meta:
         verbose_name = "Diabetes Treatment Log Detail"

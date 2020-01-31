@@ -11,7 +11,9 @@ from ..modeladmin import CrfModelAdminMixin
 
 
 @admin.register(HivInitialReview, site=inte_subject_admin)
-class HivInitialReviewAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin):
+class HivInitialReviewAdmin(
+    CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin
+):
 
     form = HivInitialReviewForm
 

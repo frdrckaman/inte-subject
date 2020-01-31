@@ -10,7 +10,8 @@ class ReviewModelMixin(models.Model):
     lifestyle_management = models.CharField(
         verbose_name=mark_safe(
             "Did the patient receive lifestyle management "
-            "<u>counsel</u> before starting medicine?"),
+            "<u>counsel</u> before starting medicine?"
+        ),
         max_length=15,
         choices=YES_NO,
         null=True,
@@ -18,9 +19,7 @@ class ReviewModelMixin(models.Model):
     )
 
     treatment_start_date = models.DateField(
-        verbose_name="When was the patient started on medicine?",
-        null=True,
-        blank=True,
+        verbose_name="When was the patient started on medicine?", null=True, blank=True,
     )
 
     treatment_start_date_estimated = edc_models.IsDateEstimatedFieldNa(

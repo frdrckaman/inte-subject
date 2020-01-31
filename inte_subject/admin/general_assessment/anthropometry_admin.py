@@ -11,7 +11,9 @@ from ..modeladmin import CrfModelAdminMixin
 
 
 @admin.register(Anthropometry, site=inte_subject_admin)
-class AnthropometryAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin):
+class AnthropometryAdmin(
+    CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin
+):
 
     form = AnthropometryForm
 
@@ -19,31 +21,15 @@ class AnthropometryAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHis
         (None, {"fields": ("subject_visit", "report_datetime")}),
         (
             "Weight and Height",
-            {
-                "fields": (
-                    "weight",
-                    "height",
-                    "waist_circumference",
-                ),
-            },
+            {"fields": ("weight", "height", "waist_circumference",),},
         ),
         (
             "Blood Pressure: Reading 1",
-            {
-                "fields": (
-                    "sys_blood_pressure_r1",
-                    "dia_blood_pressure_r1",
-                ),
-            },
+            {"fields": ("sys_blood_pressure_r1", "dia_blood_pressure_r1",),},
         ),
         (
             "Blood Pressure: Reading 2",
-            {
-                "fields": (
-                    "sys_blood_pressure_r2",
-                    "dia_blood_pressure_r2",
-                ),
-            },
+            {"fields": ("sys_blood_pressure_r2", "dia_blood_pressure_r2",),},
         ),
         audit_fieldset_tuple,
     )

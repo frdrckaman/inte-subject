@@ -11,7 +11,9 @@ from ..modeladmin import CrfModelAdminMixin
 
 
 @admin.register(DiabetesInitialReview, site=inte_subject_admin)
-class DiabetesInitialReviewAdmin(CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin):
+class DiabetesInitialReviewAdmin(
+    CrfModelAdminMixin, FormLabelModelAdminMixin, SimpleHistoryAdmin
+):
 
     form = DiabetesInitialReviewForm
 

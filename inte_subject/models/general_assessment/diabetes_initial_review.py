@@ -27,25 +27,25 @@ class DiabetesInitialReview(ReviewModelMixin, CrfModelMixin, BaseUuidModel):
     kidney_problems = models.CharField(
         verbose_name="Has the patient experienced kidney problems since diagnosed with diabetes?",
         max_length=15,
-        choices=YES_NO
+        choices=YES_NO,
     )
 
     foot_ulcers = models.CharField(
         verbose_name="Has the patient experienced foot ulcers since diagnosed with diabetes?",
         max_length=15,
-        choices=YES_NO
+        choices=YES_NO,
     )
 
     numbness = models.CharField(
         verbose_name="Has the patient experienced numbness or burning sensation in hands or feet since diagnosed with diabetes?",
         max_length=15,
-        choices=YES_NO
+        choices=YES_NO,
     )
 
     family_history = models.CharField(
         verbose_name="Is there anyone in the patient’s family with diabetes?",
         max_length=15,
-        choices=YES_NO
+        choices=YES_NO,
     )
 
     class Meta(CrfModelMixin.Meta):
