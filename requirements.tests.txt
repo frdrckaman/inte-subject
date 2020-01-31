@@ -1,0 +1,13 @@
+edc-randomization
+edc-adverse-event
+inte-auth
+inte-labs
+inte-lists
+inte-ae
+inte-screening
+inte-visit-schedule
+inte-subject
+inte-consent
+inte-form-validators
+inte_reference
+inte_metadata_rules
