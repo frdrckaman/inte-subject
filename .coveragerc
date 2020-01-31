@@ -1,0 +1,4 @@
+[run]
+include = inte_subject/*
+omit = inte_subject/tests/*
+branch = 1
