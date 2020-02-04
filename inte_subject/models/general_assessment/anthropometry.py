@@ -13,11 +13,10 @@ class Anthropometry(CrfModelMixin, BaseUuidModel):
     height = edc_models.HeightField()
 
     bmi = models.DecimalField(
-        verbose_name="",
+        verbose_name="BMI",
         decimal_places=1,
         max_digits=7,
-        help_text="kg/mm^2",
-        editable=False,
+        help_text="kg/mm^2 (Note: this field is read only. The value is calculated)",
     )
 
     waist_circumference = edc_models.WaistCircumferenceField()
@@ -31,7 +30,7 @@ class Anthropometry(CrfModelMixin, BaseUuidModel):
     dia_blood_pressure_r2 = edc_models.DiastolicPressureField(null=True, blank=False,)
 
     def save(self, *args, **kwargs):
-        self.bmi = round((Decimal(f"{self.weight}.0") / (self.height / 100.0)), 2)
+        self.bmi = round((float(self.weight) / (float(self.height) / 100.0)), 2)
         super().save(*args, **kwargs)
 
     class Meta(CrfModelMixin.Meta):

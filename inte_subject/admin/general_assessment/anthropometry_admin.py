@@ -21,7 +21,7 @@ class AnthropometryAdmin(
         (None, {"fields": ("subject_visit", "report_datetime")}),
         (
             "Weight and Height",
-            {"fields": ("weight", "height", "waist_circumference",),},
+            {"fields": ("weight", "height", "waist_circumference", "bmi"),},
         ),
         (
             "Blood Pressure: Reading 1",
@@ -35,3 +35,5 @@ class AnthropometryAdmin(
     )
 
     radio_fields = {}
+
+    readonly_fields = ["bmi"]
