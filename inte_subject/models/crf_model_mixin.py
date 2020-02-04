@@ -37,7 +37,7 @@ class CrfNoManagerModelMixin(
         return self.subject_visit.natural_key()
 
     natural_key.dependencies = [
-        "meta_subject.subjectvisit",
+        "inte_subject.subjectvisit",
         "sites.Site",
         "edc_appointment.appointment",
     ]

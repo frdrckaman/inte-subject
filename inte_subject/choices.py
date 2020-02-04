@@ -1,12 +1,11 @@
-from django.utils.safestring import mark_safe
 from edc_constants.constants import OTHER, NOT_APPLICABLE
-from edc_visit_tracking.constants import SCHEDULED, UNSCHEDULED, MISSED_VISIT
 from edc_reportable import (
     MILLIGRAMS_PER_DECILITER,
     MILLIMOLES_PER_LITER,
-    MICROMOLES_PER_LITER,
-    MICROMOLES_PER_LITER_DISPLAY,
 )
+from edc_visit_tracking.constants import SCHEDULED, UNSCHEDULED, MISSED_VISIT
+
+from .constants import SITTING, GTE_3HRS
 
 
 ACTIVITY_CHOICES = (
@@ -70,7 +69,7 @@ INFO_SOURCE = (
 
 PHYSICAL_ACTIVITY = (
     ("retired", "Retired"),
-    ("sitting", "Mostly sitting"),
+    (SITTING, "Mostly sitting"),
     ("standing_or_walking", "Mostly standing or walking"),
     ("physical_effort", "Definite physical effort"),
     ("vigorous_physical_activity", "Vigorous physical activity"),
@@ -80,7 +79,7 @@ PHYSICAL_ACTIVITY_HOURS = (
     ("none", "None"),
     ("lt_1hr", "Some but less than one hour"),
     ("1-3hr", "1 hour but less than 3 hours"),
-    ("gte_3hr", "3 hours or more"),
+    (GTE_3HRS, "3 hours or more"),
 )
 
 
