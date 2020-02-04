@@ -1,6 +1,6 @@
 from dateutil.relativedelta import relativedelta
 from django.contrib.sites.models import Site
-from edc_constants.constants import YES, NO
+from edc_constants.constants import YES, NO, MOBILE_NUMBER
 from edc_utils import get_utcnow
 from edc_visit_tracking.constants import SCHEDULED
 from faker import Faker
@@ -31,7 +31,7 @@ subjectconsent = Recipe(
     first_name=fake.first_name,
     gender="M",
     identity=seq("12315678"),
-    identity_type="country_id",
+    identity_type=MOBILE_NUMBER,
     initials="XX",
     is_dob_estimated="-",
     is_incarcerated=NO,
