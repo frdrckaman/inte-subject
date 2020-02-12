@@ -1,4 +1,10 @@
-from edc_constants.constants import OTHER, NOT_APPLICABLE
+from edc_constants.constants import (
+    SMOKER,
+    FORMER_SMOKER,
+    NONSMOKER,
+    NOT_APPLICABLE,
+    OTHER,
+)
 from edc_reportable import (
     MILLIGRAMS_PER_DECILITER,
     MILLIMOLES_PER_LITER,
@@ -41,22 +47,10 @@ VISIT_REASON = (
 )
 
 ALCOHOL_CONSUMPTION = (
-    ("less_than_once_per_week", "less than once per week"),
-    ("1-3_times_per_week", "1-3 times per week"),
-    ("daily", "daily"),
-)
-
-ALCOHOL_PREFERENCES = (
-    ("beer", "beer"),
-    ("wine", "wine"),
-    ("spirits", "spirits"),
-    ("locaL_brew", "local_brew"),
-)
-
-CIGARETTES_PER_DAY = (
-    ("1-10", "1-10"),
-    ("11-20", "11-20"),
-    ("gt-20", "more than 20"),
+    ("1_day_per_wk", "About once a week"),
+    ("2-3_day_per_wk", "2-3 days every week"),
+    ("most_days_per_month", "Most days in a month"),
+    (NOT_APPLICABLE, "Not applicable"),
 )
 
 INFO_SOURCE = (
@@ -94,6 +88,12 @@ PAYEE_CHOICES = (
     ("relative", "Relative of others paying"),
     ("free", "Free drugs from the pharmacy"),
     (NOT_APPLICABLE, "Not applicable"),
+)
+
+SMOKER_STATUS = (
+    (SMOKER, "Currently smoke"),
+    (FORMER_SMOKER, "Used to smoke but stopped"),
+    (NONSMOKER, "Never smoked"),
 )
 
 TRANSPORT_CHOICES = (

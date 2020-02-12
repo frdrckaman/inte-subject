@@ -1,3 +1,5 @@
+django-celery-results
+django-celery-beat
 edc-randomization
 edc-adverse-event
 inte-auth

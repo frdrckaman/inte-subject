@@ -7,7 +7,6 @@ from ..crf_model_mixin import CrfModelMixin
 
 
 class GeneralAssessment(CrfModelMixin, BaseUuidModel):
-
     conditions = models.ManyToManyField(
         Conditions, verbose_name="On what basis was the patient enrolled?",
     )
@@ -62,7 +61,8 @@ class GeneralAssessment(CrfModelMixin, BaseUuidModel):
         verbose_name="How long ago was this?",
         null=True,
         blank=True,
-        help_text="Diabetes. If estimated, see protocol for instructions on how to estimate dates",
+        help_text=(
+            "Diabetes. If estimated, see protocol for instructions on how to estimate dates"),
     )
 
     hypertension_screen = models.CharField(

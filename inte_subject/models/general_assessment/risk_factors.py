@@ -1,48 +1,45 @@
 from django.db import models
 from edc_constants.choices import YES_NO
+from edc_constants.constants import NOT_APPLICABLE
 from edc_model.models import BaseUuidModel
+from edc_model.validators import ym_validator
 
-from ...choices import (
-    CIGARETTES_PER_DAY,
-    ALCOHOL_CONSUMPTION,
-    ALCOHOL_PREFERENCES,
-)
+from ...choices import ALCOHOL_CONSUMPTION, SMOKER_STATUS
 from ..crf_model_mixin import CrfModelMixin
 
 
 class RiskFactors(CrfModelMixin, BaseUuidModel):
-
-    smoker_current = models.CharField(
-        verbose_name="Does the patient smoke currently?", max_length=15, choices=YES_NO,
-    )
-
-    smoker_last_12m = models.CharField(
-        verbose_name="If no, did the patient smoke in the past 12 months?",
+    smoking_status = models.CharField(
+        verbose_name="Which of these options describes you",
         max_length=15,
-        choices=YES_NO,
+        choices=SMOKER_STATUS,
     )
 
-    smoker_cigarettes_per_day = models.CharField(
-        verbose_name="If currently smoking, how many sticks of cigarette in a day?",
-        max_length=25,
-        choices=CIGARETTES_PER_DAY,
+    smoker_quit_ago_str = models.CharField(
+        verbose_name="If you used to smoke but stopped, how long ago did you stop",
+        max_length=8,
+        validators=[ym_validator],
+        null=True,
+        blank=True,
+        help_text=(
+            "Duration since last smoked. Format is `YYyMMm`. For example 1y11m, 12y7m, etc"),
     )
+
+    smoker_quit_ago_months = models.IntegerField(editable=False, )
 
     alcohol = models.CharField(
-        verbose_name="Does the patient drink alcohol?", max_length=15, choices=YES_NO,
+        verbose_name="Do you drink alcohol?", max_length=15, choices=YES_NO,
     )
 
     alcohol_consumption = models.CharField(
-        verbose_name="If yes, how often does the patient take alcohol?",
+        verbose_name="If yes, how often do you drink alcohol?",
         max_length=25,
         choices=ALCOHOL_CONSUMPTION,
+        default=NOT_APPLICABLE,
     )
 
-    alcohol_preference = models.CharField(
-        verbose_name="Does the patient drink alcohol?",
-        max_length=25,
-        choices=ALCOHOL_PREFERENCES,
-    )
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
     class Meta(CrfModelMixin.Meta):
         verbose_name = "Alcohol and Smoking"

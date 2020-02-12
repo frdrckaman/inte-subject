@@ -9,7 +9,6 @@ from .review_model_mixin import ReviewModelMixin
 
 
 class DiabetesInitialReview(ReviewModelMixin, CrfModelMixin, BaseUuidModel):
-
     diagnosis_date = models.DateField(
         verbose_name="When was the patient diagnosed with diabetes?",
     )
@@ -25,7 +24,8 @@ class DiabetesInitialReview(ReviewModelMixin, CrfModelMixin, BaseUuidModel):
         choices=YES_NO,
     )
     kidney_problems = models.CharField(
-        verbose_name="Has the patient experienced kidney problems since diagnosed with diabetes?",
+        verbose_name=(
+            "Has the patient experienced kidney problems since diagnosed with diabetes?"),
         max_length=15,
         choices=YES_NO,
     )
@@ -37,7 +37,9 @@ class DiabetesInitialReview(ReviewModelMixin, CrfModelMixin, BaseUuidModel):
     )
 
     numbness = models.CharField(
-        verbose_name="Has the patient experienced numbness or burning sensation in hands or feet since diagnosed with diabetes?",
+        verbose_name=(
+            "Has the patient experienced numbness or burning sensation in "
+            "hands or feet since diagnosed with diabetes?"),
         max_length=15,
         choices=YES_NO,
     )
