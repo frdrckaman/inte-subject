@@ -60,7 +60,8 @@ class PhysicalActivity(CrfModelMixin, BaseUuidModel):
         max_length=15,
         choices=YES_NO,
         help_text=(
-            "Yes” = ≥ 30 minutes of physical activity 5 days a week (or 2.5 hours per week)"),
+            "Yes” = ≥ 30 minutes of physical activity 5 days a week (or 2.5 hours per week)"
+        ),
     )
 
     class Meta(CrfModelMixin.Meta):

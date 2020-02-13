@@ -45,7 +45,6 @@ class TestConditionStatus(InteTestCaseMixin, TestCase):
                 "use_ncd_clinic_nearby": NOT_APPLICABLE,
                 "hiv_next_appt_date": self.subject_visit.report_datetime.date(),
                 "ncd_next_appt_date": None,
-
             }
         )
         form = GeneralAssessmentInitialForm(data=self.data)
@@ -81,7 +80,7 @@ class TestConditionStatus(InteTestCaseMixin, TestCase):
                 "attending_ncd_clinic": YES,
                 "use_ncd_clinic_nearby": YES,
                 "hiv_next_appt_date": None,
-                "ncd_next_appt_date": self.subject_visit.report_datetime.date()
+                "ncd_next_appt_date": self.subject_visit.report_datetime.date(),
             }
         )
         form = GeneralAssessmentInitialForm(data=self.data)
@@ -99,7 +98,7 @@ class TestConditionStatus(InteTestCaseMixin, TestCase):
                 "attending_ncd_clinic": YES,
                 "use_ncd_clinic_nearby": YES,
                 "ncd_next_appt_date": self.subject_visit.report_datetime.date(),
-                "hiv_next_appt_date": None
+                "hiv_next_appt_date": None,
             }
         )
         form = GeneralAssessmentInitialForm(data=self.data)

@@ -17,8 +17,8 @@ class GeneralAssessmentAdmin(
 
     fieldsets = (
         (None, {"fields": ("subject_visit", "report_datetime")}),
-        ("Diagnoses at screening", {"fields": ("conditions",), },),
-        ("HIV", {"fields": ("hiv_screen", "hiv_informed", "hiv_screen_date",), },),
+        ("Diagnoses at screening", {"fields": ("conditions",)}),
+        ("HIV", {"fields": ("hiv_screen", "hiv_informed", "hiv_screen_date",)}),
         (
             "Diabetes",
             {

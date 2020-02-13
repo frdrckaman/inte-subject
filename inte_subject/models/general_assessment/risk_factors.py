@@ -22,10 +22,11 @@ class RiskFactors(CrfModelMixin, BaseUuidModel):
         null=True,
         blank=True,
         help_text=(
-            "Duration since last smoked. Format is `YYyMMm`. For example 1y11m, 12y7m, etc"),
+            "Duration since last smoked. Format is `YYyMMm`. For example 1y11m, 12y7m, etc"
+        ),
     )
 
-    smoker_quit_ago_months = models.IntegerField(editable=False, )
+    smoker_quit_ago_months = models.IntegerField(editable=False,)
 
     alcohol = models.CharField(
         verbose_name="Do you drink alcohol?", max_length=15, choices=YES_NO,

@@ -28,9 +28,7 @@ class TestRiskFactors(InteTestCaseMixin, TestCase):
         self.assertEqual(form._errors, {})
 
     def test_risk_factors_non_smoker(self):
-        self.data.update(
-            {"smoking_status": NONSMOKER, "smoker_quit_ago_str": None}
-        )
+        self.data.update({"smoking_status": NONSMOKER, "smoker_quit_ago_str": None})
         form = RiskFactorsForm(data=self.data)
         form.is_valid()
         self.assertEqual(form._errors, {})

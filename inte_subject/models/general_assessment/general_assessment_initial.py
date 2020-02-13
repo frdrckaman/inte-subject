@@ -30,9 +30,7 @@ class GeneralAssessmentInitial(CrfModelMixin, BaseUuidModel):
     )
 
     hiv_next_appt_date = models.DateField(
-        verbose_name="When is your next HIV appointment",
-        null=True,
-        blank=True
+        verbose_name="When is your next HIV appointment", null=True, blank=True
     )
 
     diabetic = models.CharField(
@@ -68,9 +66,7 @@ class GeneralAssessmentInitial(CrfModelMixin, BaseUuidModel):
     )
 
     ncd_next_appt_date = models.DateField(
-        verbose_name="When is your next NCD appointment",
-        null=True,
-        blank=True
+        verbose_name="When is your next NCD appointment", null=True, blank=True
     )
 
     class Meta(CrfModelMixin.Meta):

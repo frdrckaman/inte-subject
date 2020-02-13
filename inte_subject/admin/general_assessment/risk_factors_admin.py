@@ -17,8 +17,8 @@ class RiskFactorsAdmin(
 
     fieldsets = (
         (None, {"fields": ("subject_visit", "report_datetime")}),
-        ("Smoking", {"fields": ("smoking_status", "smoker_quit_ago_str",), },),
-        ("Alcohol", {"fields": ("alcohol", "alcohol_consumption",), },),
+        ("Smoking", {"fields": ("smoking_status", "smoker_quit_ago_str")}),
+        ("Alcohol", {"fields": ("alcohol", "alcohol_consumption",)}),
         audit_fieldset_tuple,
     )
 

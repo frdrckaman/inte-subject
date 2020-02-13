@@ -6,9 +6,7 @@ from inte_form_validators import RiskFactorsFormValidator
 from ..models import RiskFactors
 
 
-class RiskFactorsForm(
-    SiteModelFormMixin, FormValidatorMixin, forms.ModelForm
-):
+class RiskFactorsForm(SiteModelFormMixin, FormValidatorMixin, forms.ModelForm):
     form_validator_cls = RiskFactorsFormValidator
 
     class Meta:

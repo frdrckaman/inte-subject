@@ -62,7 +62,8 @@ class GeneralAssessment(CrfModelMixin, BaseUuidModel):
         null=True,
         blank=True,
         help_text=(
-            "Diabetes. If estimated, see protocol for instructions on how to estimate dates"),
+            "Diabetes. If estimated, see protocol for instructions on how to estimate dates"
+        ),
     )
 
     hypertension_screen = models.CharField(

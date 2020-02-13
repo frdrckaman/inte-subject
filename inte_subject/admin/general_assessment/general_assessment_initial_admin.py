@@ -31,7 +31,7 @@ class GeneralAssessmentInitialAdmin(
                     "hypertensive",
                     "attending_ncd_clinic",
                     "use_ncd_clinic_nearby",
-                    "ncd_next_appt_date"
+                    "ncd_next_appt_date",
                 ),
             },
         ),

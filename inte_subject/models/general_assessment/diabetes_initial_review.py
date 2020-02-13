@@ -25,7 +25,8 @@ class DiabetesInitialReview(ReviewModelMixin, CrfModelMixin, BaseUuidModel):
     )
     kidney_problems = models.CharField(
         verbose_name=(
-            "Has the patient experienced kidney problems since diagnosed with diabetes?"),
+            "Has the patient experienced kidney problems since diagnosed with diabetes?"
+        ),
         max_length=15,
         choices=YES_NO,
     )
@@ -39,7 +40,8 @@ class DiabetesInitialReview(ReviewModelMixin, CrfModelMixin, BaseUuidModel):
     numbness = models.CharField(
         verbose_name=(
             "Has the patient experienced numbness or burning sensation in "
-            "hands or feet since diagnosed with diabetes?"),
+            "hands or feet since diagnosed with diabetes?"
+        ),
         max_length=15,
         choices=YES_NO,
     )

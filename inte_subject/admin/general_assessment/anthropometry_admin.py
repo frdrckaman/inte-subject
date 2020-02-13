@@ -19,15 +19,15 @@ class AnthropometryAdmin(
         (None, {"fields": ("subject_visit", "report_datetime")}),
         (
             "Weight and Height",
-            {"fields": ("weight", "height", "waist_circumference", "bmi"), },
+            {"fields": ("weight", "height", "waist_circumference", "bmi")},
         ),
         (
             "Blood Pressure: Reading 1",
-            {"fields": ("sys_blood_pressure_r1", "dia_blood_pressure_r1",), },
+            {"fields": ("sys_blood_pressure_r1", "dia_blood_pressure_r1",)},
         ),
         (
             "Blood Pressure: Reading 2",
-            {"fields": ("sys_blood_pressure_r2", "dia_blood_pressure_r2",), },
+            {"fields": ("sys_blood_pressure_r2", "dia_blood_pressure_r2",)},
         ),
         audit_fieldset_tuple,
     )
