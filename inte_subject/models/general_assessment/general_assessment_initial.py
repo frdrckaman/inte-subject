@@ -29,6 +29,12 @@ class GeneralAssessmentInitial(CrfModelMixin, BaseUuidModel):
         default=NOT_APPLICABLE,
     )
 
+    hiv_next_appt_date = models.DateField(
+        verbose_name="When is your next HIV appointment",
+        null=True,
+        blank=True
+    )
+
     diabetic = models.CharField(
         verbose_name=mark_safe(
             "Have you previously been diagnosed with <u>diabetes</u> "
@@ -59,6 +65,12 @@ class GeneralAssessmentInitial(CrfModelMixin, BaseUuidModel):
         max_length=15,
         choices=YES_NO_NA,
         default=NOT_APPLICABLE,
+    )
+
+    ncd_next_appt_date = models.DateField(
+        verbose_name="When is your next NCD appointment",
+        null=True,
+        blank=True
     )
 
     class Meta(CrfModelMixin.Meta):
