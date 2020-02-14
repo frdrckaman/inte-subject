@@ -32,7 +32,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     EMAIL_ENABLED=True,
     HOLIDAY_FILE=join(base_dir, app_name, "tests", "holidays.csv"),
     LIVE_SYSTEM=False,
-    RANDOMIZATION_LIST_PATH=join(base_dir, app_name, "tests", "etc"),
+    EDC_RANDOMIZATION_LIST_PATH=join(base_dir, app_name, "tests", "etc"),
     EDC_RANDOMIZATION_REGISTER_DEFAULT_RANDOMIZER=False,
     INSTALLED_APPS=[
         "django.contrib.admin",
