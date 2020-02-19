@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 from edc_constants.choices import YES_NO_UNKNOWN, YES_NO_NA
 from edc_constants.constants import NOT_APPLICABLE
 from edc_model.models.base_uuid_model import BaseUuidModel
+from edc_model.validators import date_is_future
 
 from ..crf_model_mixin import CrfModelMixin
 
@@ -30,7 +31,10 @@ class GeneralAssessmentInitial(CrfModelMixin, BaseUuidModel):
     )
 
     hiv_next_appt_date = models.DateField(
-        verbose_name="When is your next HIV appointment", null=True, blank=True
+        verbose_name="When is your next HIV appointment",
+        validators=[date_is_future],
+        null=True,
+        blank=True,
     )
 
     diabetic = models.CharField(
@@ -66,7 +70,10 @@ class GeneralAssessmentInitial(CrfModelMixin, BaseUuidModel):
     )
 
     ncd_next_appt_date = models.DateField(
-        verbose_name="When is your next NCD appointment", null=True, blank=True
+        verbose_name="When is your next NCD appointment",
+        validators=[date_is_future],
+        null=True,
+        blank=True,
     )
 
     class Meta(CrfModelMixin.Meta):

@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from dateutil.relativedelta import relativedelta
 from django.test import TestCase, tag
 from edc_constants.constants import SMOKER, NONSMOKER, NOT_APPLICABLE, NO, YES
@@ -45,7 +47,7 @@ class TestGeneralAssessmentInitial(InteTestCaseMixin, TestCase):
         )
         form = GeneralAssessmentInitialForm(data=self.data)
         form.is_valid()
-        self.assertIn("hiv_next_appt_date", form._errors)
+        self.assertEqual(form._errors, {})
 
     @tag("1")
     def test_ncd_next_appt_date_not_applicable(self):
@@ -67,7 +69,7 @@ class TestGeneralAssessmentInitial(InteTestCaseMixin, TestCase):
         form.is_valid()
         self.assertIn("hiv_next_appt_date", form._errors)
 
-    @tag("1")
+    @tag("2")
     def test_ncd_next_appt_date_is_future(self):
         self.data.update(
             hiv_next_appt_date=self.subject_visit.report_datetime
